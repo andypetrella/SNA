@@ -1,0 +1,28 @@
+@(title: String)(content: Html)(implicit req:RequestHeader)
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>@title</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+
+    <!--d3js-->
+    <script src="@routes.Assets.at("javascripts/d3.v3.min.js")"></script>
+
+    <!-- this -->
+    <script src="@routes.Assets.at("javascripts/SNA.js")" type="text/javascript"></script>
+    @helper.javascriptRouter("playRoutes")(
+      routes.javascript.Application.generateRandomGraph,
+      routes.javascript.Application.getGraph,
+      routes.javascript.Application.createNode,
+      routes.javascript.Application.infection,
+      routes.javascript.Application.expand
+    )
+  </head>
+  <body>
+    @content
+  </body>
+</html>

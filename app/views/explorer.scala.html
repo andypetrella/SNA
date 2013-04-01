@@ -1,0 +1,25 @@
+@(graphs:Seq[(Int, String)])(implicit req:RequestHeader)
+@main("Graphs") {
+<div id="explorer">
+  <select id="graphs">
+    <option value="">---</option>
+    @graphs.map{g=>
+      <option value="@g._2">@g._2</option>
+    }
+  </select>
+  <form  id="c-graph">
+    <input name="name">
+    <input type="number" name="numberOfNodes">
+    <input type="float" name="degree">
+    <input type="float" name="infectionRate">
+    <input type="submit" value='create graph'>
+  </form>
+  <button id="create">create node</button>
+  <button id="infect">infect</button>
+  <button id="expand">expand</button>
+  <div id="stats">
+  </div>
+  <div id="graph">
+  </div>
+</div>
+}

@@ -1,0 +1,16 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+GET     /graphs                     controllers.Application.graphExplorer
+GET     /graphs/create              controllers.Application.createGraph(name:String, degree:Double, infectionRate:Double)
+GET     /graphs/generate            controllers.Application.generateRandomGraph(name:String, degree:Double, numberOfNodes:Int, infectionRate:Double)
+GET     /graph/:name                controllers.Application.getGraph(name:String)
+GET     /graph/:name/node/create    controllers.Application.createNode(name:String)
+GET     /graph/:name/infect         controllers.Application.infection(name:String)
+GET     /graph/:name/expand         controllers.Application.expand(name:String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

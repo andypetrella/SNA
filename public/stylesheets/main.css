@@ -1,0 +1,26 @@
+.link {
+  stroke: #ccc;
+}
+
+.node {
+  fill: black;
+}
+
+.node.infected {
+  fill: red;
+}
+
+.tick line {
+  stroke: black;
+  stroke-width: 1px;
+}
+
+path {
+  stroke: black;
+  stroke-width: 1px;
+  fill: none;
+}
+
+#stats {
+  font-size: 8pt;
+}
